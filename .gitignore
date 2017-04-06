@@ -16,6 +16,13 @@ public/.DS_Store
 Tgumbs.db
 public/javascripts/.DS_Store
 public/.DS_Store
+*.bak
+*.swp
+*.swo
+*.dmp
+*.*~
+*.sock
+*.dot
 
 .idea/
 .byebug_history

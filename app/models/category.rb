@@ -1,8 +1,9 @@
 class Category < ApplicationRecord
 
   validates_presence_of :title, message: "名称不能为空"
+  validates_uniqueness_of :title, message: "名称不能重复"
 
-  has_ancestry
+  has_ancestry orphan_strategy: :destroy
   has_many :products, dependent: :destroy
 
   before_validation :correct_ancestry

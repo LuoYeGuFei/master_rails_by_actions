@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   validates_presence_of :description, message: "描述不能为空"
 
   belongs_to :category
+  has_many :product_images, -> {order(weight: 'desc')},
+    dependent: :destroy
 
   before_create :set_default_attrs
 

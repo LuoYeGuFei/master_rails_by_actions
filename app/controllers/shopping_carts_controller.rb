@@ -33,6 +33,13 @@ class ShoppingCartsController < ApplicationController
     redirect_to shopping_carts_path
   end
 
+  def destroy
+    @shopping_cart.destroy if @shopping_cart
+
+    redirect_to shopping_carts_path
+
+  end
+
   private
   def find_shopping_cart
     @shopping_cart = ShoppingCart.by_user_uuid(session[:user_uuid]).
